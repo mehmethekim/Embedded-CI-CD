@@ -13,7 +13,7 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: Setup ESP_IDF
-        run: get_idf
+        run: . $HOME/esp/esp-idf/export.sh
       - name: Remove build files
         run: rm -rf build
       - name: Build files
