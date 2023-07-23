@@ -18,6 +18,8 @@ jobs:
         run: rm -rf build
       - name: Set Target as ESP32-S3
         run: idf.py set-target esp32s3
+      - name: See directory for tests
+        run: ls
       - name: Build files
         run: idf.py build
       - name: Run tests
