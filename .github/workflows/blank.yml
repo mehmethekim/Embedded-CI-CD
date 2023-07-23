@@ -19,10 +19,13 @@ jobs:
         run: |
           cd $IDF_PATH/examples/${{ github.event.repository.name }}
           pwd
-      #- name: Set Target as ESP32-S3
-        #run: idf.py set-target esp32s3
-      #- name: Build files
-        #run: idf.py build
+      - name: Set Target as ESP32-S3 and build
+        run : |
+          cd $IDF_PATH/examples/${{ github.event.repository.name }}
+          idf.py set-target esp32s3
+          idf.py build
       - name: Run tests
-        run: pytest --target esp32s3
+        run: |
+          cd $IDF_PATH/examples/${{ github.event.repository.name }}
+          pytest --target esp32s3
       - run: echo "🍏 This job's status is ${{ job.status }}."
