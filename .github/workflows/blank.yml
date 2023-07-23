@@ -24,8 +24,8 @@ jobs:
         run: cd $IDF_PATH/examples/${{ github.event.repository.name }}
       - name: See files
         run: ls
-      #- name: Build files
-        #run: idf.py build
-     # - name: Run tests
-       # run: pytest --target esp32s3
-     # - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Build files
+        run: idf.py build
+      - name: Run tests
+        run: pytest --target esp32s3
+      - run: echo "🍏 This job's status is ${{ job.status }}."
