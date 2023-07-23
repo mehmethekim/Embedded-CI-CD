@@ -18,8 +18,8 @@ jobs:
         run: rm -rf build
       - name: Set Target as ESP32-S3
         run: idf.py set-target esp32s3
-      - name: Copy files to IDF_PATH
-        run: cd .. && cp -r ./${{ github.event.repository.name }} $IDF_PATH/examples/
+      - name: Copy files to IDF_PATH, remove if exits
+        run: cd .. && cp -r -f ./${{ github.event.repository.name }} $IDF_PATH/examples/
       - name: Go to files in IDF_PATH
         run: cd $IDF_PATH/examples/${{ github.event.repository.name }}
       - name: See files
