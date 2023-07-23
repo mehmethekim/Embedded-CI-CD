@@ -8,8 +8,7 @@ import pytest
 from pytest_embedded_idf.dut import IdfDut
 
 
-@pytest.mark.supported_targets
-@pytest.mark.generic
+@pytest.mark.esp32s3
 def test_blink(dut: IdfDut) -> None:
     # check and log bin size
     binary_file = os.path.join(dut.app.binary_path, 'blink.bin')
